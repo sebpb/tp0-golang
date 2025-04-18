@@ -43,12 +43,24 @@ func LeerConsola() string {
 	return text
 }
 
-func GenerarYEnviarPaquete() {
+func LeerYGuardarPaquete() Paquete {
 	// Leemos y cargamos el paquete
-	paquete := Paquete{}
+	var paquete Paquete
+
+	var text []string
+	for true {
+		input := LeerConsola()
+		if input == "\n" {
+			break
+		}
+		text = append(text, input)
+	}
+
+	paquete.Valores = text
 
 	// Enviamos el paqute
 	log.Printf("paqute a enviar: %+v", paquete)
+	return paquete
 }
 
 func EnviarMensaje(ip string, puerto int, mensajeTxt string) {

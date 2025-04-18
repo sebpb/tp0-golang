@@ -25,7 +25,13 @@ func main() {
 	// enviar un mensaje al servidor con el valor de la config
 
 	// leer de la consola el mensaje
-	// utils.LeerConsola()
+	for true {
+		text := utils.LeerConsola()
+		if text == "\n" {
+			log.Print("Fin del programa")
+			break
+		}
+	}
 
 	// generamos un paquete y lo enviamos al servidor
 	// utils.GenerarYEnviarPaquete()
